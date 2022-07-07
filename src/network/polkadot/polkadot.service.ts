@@ -56,8 +56,4 @@ export class PolkadotService {
     const transferableBalance = freeBalance - lockedBalance;
     return transferableBalance / this.POLKADOT_PARAM.PERCISSION;
   }
-
-  async getAccumalatedStakingReward(address: string){
-    this.subqueryService.TotalStakingRewards(address);
-  }
 }
