@@ -4,6 +4,6 @@ import { NetworkController } from './controller/network.controller';
 
 @Module({
   providers: [PolkadotService],
-  controllers: [NetworkController]
+  controllers: [NetworkController],
 })
 export class NetworkModule {}

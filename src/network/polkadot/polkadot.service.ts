@@ -1,6 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { ApiPromise, WsProvider } from '@polkadot/api';
 import { PolkadotParametes } from './PolkadotParametes';
+import { PolkadotSubQueryService } from './subquery.service';
 
 @Injectable()
 export class PolkadotService {
@@ -11,7 +12,7 @@ export class PolkadotService {
     timestamp: true,
   });
 
-  constructor() {
+  constructor(private subqueryService: PolkadotSubQueryService) {
     this.getApi().then((api) => {
       this.api = api;
       this.logger.log('Polkadot API connected');
@@ -54,5 +55,9 @@ export class PolkadotService {
     const lockedBalance: number = balance['data']['miscFrozen'];
     const transferableBalance = freeBalance - lockedBalance;
     return transferableBalance / this.POLKADOT_PARAM.PERCISSION;
+  }
+
+  async getAccumalatedStakingReward(address: string){
+    this.subqueryService.TotalStakingRewards(address);
   }
 }
