@@ -1,7 +1,7 @@
 import { Injectable, Logger, OnModuleInit } from '@nestjs/common';
 import { ApiPromise, WsProvider } from '@polkadot/api';
-import { WalletBalance } from './dto/WalletBalance.dto';
-import { PolkadotParametes } from './PolkadotParametes';
+import { WalletBalance } from '../dto/WalletBalance.dto';
+import { PolkadotParametes } from '../PolkadotParametes';
 
 @Injectable()
 export class PolkadotService implements OnModuleInit {
