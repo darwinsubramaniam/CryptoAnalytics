@@ -5,14 +5,14 @@ import { SupportedNetworkNames } from '../supported_network';
 
 @Controller('network')
 export class NetworkController {
-    constructor(private networkServices:NetworkService) {}
+  constructor(private networkServices: NetworkService) { }
 
-    @Get(':address/:network')
-    async getBalances(@Param('address') address:string, @Param('network') network:SupportedNetworkNames): Promise<WalletBalance> {
-        try {
-            return await this.networkServices.getBalance(address, network);
-        } catch (error) {
-            throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
-        }
+  @Get(':address/:network')
+  async getBalances(@Param('address') address: string, @Param('network') network: SupportedNetworkNames): Promise<WalletBalance> {
+    try {
+      return await this.networkServices.getBalance(address, network);
+    } catch (error) {
+      throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
     }
+  }
 }
