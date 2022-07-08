@@ -1,3 +1,3 @@
-export enum SupportedNetworkNames  {
-    POLKADOT = 'polkadot',
+export enum SupportedNetworkNames {
+  POLKADOT = 'polkadot',
 }
