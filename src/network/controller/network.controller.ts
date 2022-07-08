@@ -5,11 +5,13 @@ import {
   HttpStatus,
   Param,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { NetworkService } from '../network.service';
 import { WalletBalance } from '../polkadot/dto/WalletBalance.dto';
 import { SupportedNetworkNames } from '../supported_network';
 
 @Controller('network')
+@ApiTags('Network')
 export class NetworkController {
   constructor(private networkServices: NetworkService) {}
 
