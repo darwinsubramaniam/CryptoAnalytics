@@ -1,5 +1,5 @@
 export enum WalletType {
-    ETH = 'ETH',
-    BTC = 'BTC',
-    SUBSTRATe = 'SUBSTRATE',
+  ETH = 'ETH',
+  BTC = 'BTC',
+  SUBSTRATe = 'SUBSTRATE',
 }
